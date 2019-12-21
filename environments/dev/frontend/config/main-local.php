@@ -6,8 +6,14 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '',
         ],
-    ],
+        'user' => [
+            'identityClass' => 'frontend\models\User',
+            'enableAutoLogin' => true,
+        ],
+    ],    
 ];
+
+
 
 if (!YII_ENV_TEST) {
     // configuration adjustments for 'dev' environment

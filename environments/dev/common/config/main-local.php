@@ -8,6 +8,13 @@ return [
             'password' => '',
             'charset' => 'utf8',
         ],
+        'urlManager' => [
+            'class' => 'yii\web\UrlManager',
+            'scriptUrl' => '',
+            'baseUrl' => '',
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+        ],        
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             'viewPath' => '@common/mail',
@@ -16,10 +23,8 @@ return [
             // for the mailer to send real emails.
             'useFileTransport' => true,
         ],
-       
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
-            
-        ],
-    ],
+        ],                   
+    ],    
 ];
