@@ -7,7 +7,7 @@ $config = [
             'cookieValidationKey' => '',
         ],
         'user' => [
-            'identityClass' => 'frontend\models\User',
+            'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
         ],
     ],    
