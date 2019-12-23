@@ -35,11 +35,16 @@ AppAsset::register($this);
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
-    $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
-    ];
+    $menuItems = [];
+    $menuItems[] = ['label' => 'Home', 'url' => ['/site/index']];
+    if(!Yii::$app->user->isGuest)
+    {
+        $menuItems[] = ['label' => 'Productos', 'url' => ['/producto']];
+        $menuItems[] = ['label' => 'Subcategorias', 'url' => ['/subcategoria']];
+        $menuItems[] = ['label' => 'Categorias', 'url' => ['/categoria']];
+    }     
+    $menuItems[] = ['label' => 'About', 'url' => ['/site/about']];       
+    
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
