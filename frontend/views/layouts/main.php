@@ -42,6 +42,7 @@ AppAsset::register($this);
         $menuItems[] = ['label' => 'Productos', 'url' => ['/producto']];
         $menuItems[] = ['label' => 'Subcategorias', 'url' => ['/subcategoria']];
         $menuItems[] = ['label' => 'Categorias', 'url' => ['/categoria']];
+        $menuItems[] = ['label' => 'Usuarios', 'url' => ['/user-admin']];
     }     
     $menuItems[] = ['label' => 'About', 'url' => ['/site/about']];       
     
