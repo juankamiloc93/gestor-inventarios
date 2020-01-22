@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'nombre',           
             [
                 'label' => 'Categoria',
-                'value' => function($model, $index, $categorias)
+                'value' => function($model, $index)
                     {
                         return $model['categoria']['nombre'];                        
                     }

@@ -33,7 +33,7 @@ class Producto extends \yii\db\ActiveRecord
             [['nombre'], 'required'],
             [['estado', 'id_subcategoria'], 'integer'],
             [['nombre'], 'string', 'max' => 32],
-            [['id_subcategoria'], 'exist', 'skipOnError' => true, 'targetClass' => Subcategoria::className(), 'targetAttribute' => ['id_subcategoria' => 'id_subcategoria']],
+            [['id_producto'], 'exist', 'skipOnError' => true, 'targetClass' => Subcategoria::className(), 'targetAttribute' => ['id_subcategoria' => 'id_producto']],
         ];
     }
 

@@ -66,9 +66,5 @@ class Subcategoria extends \yii\db\ActiveRecord
 
     /**
      * @return \yii\db\ActiveQuery
-     */
-    public function getSubcategoria()
-    {
-        return $this->hasOne(Categoria::className(), ['id_categoria' => 'id_categoria']);
-    }
+     */   
 }

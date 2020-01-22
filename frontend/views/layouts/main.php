@@ -29,7 +29,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => 'Gestión de inventarios',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -38,10 +38,10 @@ AppAsset::register($this);
     $menuItems = [];
     $menuItems[] = ['label' => 'Home', 'url' => ['/site/index']];
     if(!Yii::$app->user->isGuest)
-    {
-        $menuItems[] = ['label' => 'Productos', 'url' => ['/producto']];
-        $menuItems[] = ['label' => 'Subcategorias', 'url' => ['/subcategoria']];
+    {       
         $menuItems[] = ['label' => 'Categorias', 'url' => ['/categoria']];
+        $menuItems[] = ['label' => 'Subcategorias', 'url' => ['/subcategoria']];
+        $menuItems[] = ['label' => 'Productos', 'url' => ['/producto']];
         $menuItems[] = ['label' => 'Usuarios', 'url' => ['/user-admin']];
     }     
     $menuItems[] = ['label' => 'About', 'url' => ['/site/about']];       

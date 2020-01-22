@@ -25,7 +25,7 @@ $this->title = 'My Yii Application';
                     ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                     fugiat nulla pariatur.</p>
 
-                <p><a class="btn btn-default" href="">Ir a productos &raquo;</a></p>
+                <p><a class="btn btn-default" href="../categoria">Ir a categorias &raquo;</a></p>
             </div>
             <div class="col-lg-4">
                 <h2>Subcategorias</h2>
@@ -35,7 +35,7 @@ $this->title = 'My Yii Application';
                     ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                     fugiat nulla pariatur.</p>
 
-                <p><a class="btn btn-default" href="">Ir a subcategorias &raquo;</a></p>
+                <p><a class="btn btn-default" href="../subcategoria">Ir a subcategorias &raquo;</a></p>
             </div>
             <div class="col-lg-4">
                 <h2>Categorias</h2>
@@ -45,7 +45,7 @@ $this->title = 'My Yii Application';
                     ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                     fugiat nulla pariatur.</p>
 
-                <p><a class="btn btn-default" href="">Ir a categorias &raquo;</a></p>
+                <p><a class="btn btn-default" href="../producto">Ir a productos &raquo;</a></p>
             </div>
         </div>
 

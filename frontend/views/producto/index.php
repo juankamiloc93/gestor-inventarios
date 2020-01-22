@@ -24,11 +24,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id_producto',
+            ['class' => 'yii\grid\SerialColumn'],            
             'nombre',            
-            'id_subcategoria',
+            [
+                'label' => 'Subcategoria',
+                'value' => function($model, $index)
+                    {                       
+                        return $model['subcategoria']['nombre'];                        
+                    }
+            ],  
             [
                 'label' => 'Estado',
                 'value' => function($model)

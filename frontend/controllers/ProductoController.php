@@ -156,7 +156,7 @@ class ProductoController extends Controller
     protected function getSubcategorias()
     {
         $subcategoriaModel = Subcategoria::find()->all();  
-        $subcategorias = ArrayHelper::map($subcategoriaModel, 'id_categoria', 'nombre');
+        $subcategorias = ArrayHelper::map($subcategoriaModel, 'id_subcategoria', 'nombre');
 
         return $subcategorias;
     }
