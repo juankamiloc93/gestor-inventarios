@@ -54,4 +54,14 @@ class Categoria extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Subcategoria::className(), ['id_subcategoria' => 'id_categoria']);
     }
+
+    public function getEstado()
+    {
+        if ($this->estado==1)
+        {
+            return 'Activo';
+        }else{
+            return 'Inactivo';
+        }
+    }
 }

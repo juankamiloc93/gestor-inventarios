@@ -14,7 +14,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'estado')->textInput() ?>
+    <?php $estados = ['Inactivo', 'Activo'];?>
+    <?= $form->field($model, 'estado')->dropDownList($estados, ['prompt' => '']) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

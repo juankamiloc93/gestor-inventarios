@@ -6,19 +6,20 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Subcategoria */
 /* @var $form yii\widgets\ActiveForm */
+Yii::trace('Categorias desde view');
+Yii::trace($categorias);
 ?>
 
 <div class="subcategoria-form">
 
-    <?php $form = ActiveForm::begin(); ?>
-
-    <?= $form->field($model, 'id_subcategoria')->textInput() ?>
+    <?php $form = ActiveForm::begin(); ?>    
 
     <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'estado')->textInput() ?>
-
-    <?= $form->field($model, 'id_categoria')->textInput() ?>
+    <?php $estados = ['Inactivo', 'Activo'];?>
+    <?= $form->field($model, 'estado')->dropDownList($estados, ['prompt' => '']) ?>
+    
+    <?= $form->field($model, 'id_categoria')->dropDownList($categorias, ['prompt' => '']) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

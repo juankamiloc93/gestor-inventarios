@@ -94,6 +94,7 @@ class CategoriaController extends Controller
 
         return $this->render('create', [
             'model' => $model,
+            'estados' => ['Inactivo', 'Activo']            
         ]);
     }
 
@@ -114,6 +115,7 @@ class CategoriaController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'estados' => ['Inactivo', 'Activo'] 
         ]);
     }
 

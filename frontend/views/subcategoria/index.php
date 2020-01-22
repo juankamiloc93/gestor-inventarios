@@ -9,6 +9,8 @@ use yii\grid\GridView;
 
 $this->title = 'Subcategorias';
 $this->params['breadcrumbs'][] = $this->title;
+
+
 ?>
 <div class="subcategoria-index">
 
@@ -24,13 +26,22 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id_subcategoria',
-            'nombre',
-            'estado',
-            'id_categoria',
-
+            ['class' => 'yii\grid\SerialColumn'],           
+            'nombre',           
+            [
+                'label' => 'Categoria',
+                'value' => function($model, $index, $categorias)
+                    {
+                        return $model['categoria']['nombre'];                        
+                    }
+            ],  
+            [
+                'label' => 'Estado',
+                'value' => function($model)
+                    {
+                        return ($model->estado==1)? 'Activo':'Inactivo';
+                    }
+            ],  
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

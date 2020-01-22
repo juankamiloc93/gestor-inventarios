@@ -4,7 +4,9 @@ namespace frontend\controllers;
 
 use Yii;
 use frontend\models\Producto;
+use frontend\models\Subcategoria;
 use frontend\models\ProductoSearch;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -94,6 +96,8 @@ class ProductoController extends Controller
 
         return $this->render('create', [
             'model' => $model,
+            'estados' => ['inactivo', 'activo'],
+            'subcategorias' => $this->getSubcategorias()
         ]);
     }
 
@@ -114,6 +118,8 @@ class ProductoController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'estados' => ['inactivo', 'activo'],
+            'subcategorias' => $this->getSubcategorias()
         ]);
     }
 
@@ -145,5 +151,13 @@ class ProductoController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    protected function getSubcategorias()
+    {
+        $subcategoriaModel = Subcategoria::find()->all();  
+        $subcategorias = ArrayHelper::map($subcategoriaModel, 'id_categoria', 'nombre');
+
+        return $subcategorias;
     }
 }

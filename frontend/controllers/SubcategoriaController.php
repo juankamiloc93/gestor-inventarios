@@ -3,7 +3,9 @@
 namespace frontend\controllers;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 use frontend\models\Subcategoria;
+use frontend\models\Categoria;
 use frontend\models\SubcategoriaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -58,11 +60,11 @@ class SubcategoriaController extends Controller
     public function actionIndex()
     {
         $searchModel = new SubcategoriaSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);        
 
         return $this->render('index', [
             'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'dataProvider' => $dataProvider            
         ]);
     }
 
@@ -94,6 +96,8 @@ class SubcategoriaController extends Controller
 
         return $this->render('create', [
             'model' => $model,
+            'estados' => ['Inactivo', 'Activo'],
+            'categorias' => $this->getcategrorias()
         ]);
     }
 
@@ -114,6 +118,8 @@ class SubcategoriaController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'estados' => ['Inactivo', 'Activo'],
+            'categorias' => $this->getcategrorias()
         ]);
     }
 
@@ -145,5 +151,13 @@ class SubcategoriaController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    protected function getcategrorias()
+    {
+        $categoriaModel = Categoria::find()->all();
+        $categorias = ArrayHelper::map($categoriaModel, 'id_categoria', 'nombre');      
+        
+        return $categorias;
     }
 }

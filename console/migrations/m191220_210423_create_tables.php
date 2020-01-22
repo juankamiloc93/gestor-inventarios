@@ -25,7 +25,7 @@ class m191220_210423_create_tables extends Migration
             'id_categoria' => $this->integer(),
         ],'engine = InnoDB');
 
-        $this->addForeignKey('id_categoria_fkey', 'subcategoria', 'id_subcategoria', 'categoria', 'id_categoria', 'CASCADE');
+        $this->addForeignKey('id_categoria_fkey', 'subcategoria', 'id_categoria', 'categoria', 'id_categoria', 'CASCADE');
 
         $this->createTable('producto', [
             'id_producto' => $this->primaryKey(),

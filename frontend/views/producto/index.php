@@ -27,9 +27,15 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id_producto',
-            'nombre',
-            'estado',
+            'nombre',            
             'id_subcategoria',
+            [
+                'label' => 'Estado',
+                'value' => function($model)
+                    {
+                        return ($model->estado==1)? 'Activo':'Inactivo';
+                    }
+            ],  
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
